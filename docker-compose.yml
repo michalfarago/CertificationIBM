@@ -1,0 +1,14 @@
+version: "3"
+services:
+    certifications-ibm-frontend:
+        image: techonestack/certification-app-frontend:latest
+        restart: unless-stopped
+        depends_on:
+        - certifications-ibm-backend
+        ports:
+        - "8081:80"
+    certifications-ibm-backend:
+        image: techonestack/certification-app-backend:latest
+        restart: unless-stopped
+        ports:
+        - "8080:8080"
